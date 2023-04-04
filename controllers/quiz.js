@@ -43,7 +43,7 @@ exports.update = async(req, res) => {
             where: { id }
         })
         res.json({
-            message: `Data dengan id=${id} berhasil diubah.`,
+            message: `Data dengan id: ${id} berhasil diubah.`,
             data: quiz,
         });
     } catch (error) {
@@ -79,7 +79,7 @@ exports.findOne = async(req, res) => {
     try {
         const quiz = await Quiz.findByPk(id, { rejectOnEmpty: true })
         res.json({
-            message: `Quizzes retrieved successfully with id=${id}.`,
+            message: `Quizzes retrieved successfully with id: ${id}.`,
             data: quiz,
         });
     } catch (error) {
@@ -99,7 +99,7 @@ exports.getByCategoryId = async(req, res) => {
         }
     })
     res.json({
-        message: `Quizzes retrieved successfully with id=${id}.`,
+        message: `Quizzes retrieved successfully with id: ${id}.`,
         data: quizzes,
     });
 }
@@ -113,7 +113,7 @@ exports.getByLevelId = async(req, res) => {
         }
     })
     res.json({
-        message: `Quizzes retrieved successfully with levelId=${id}.`,
+        message: `Quizzes retrieved successfully with levelId: ${id}.`,
         data: quizzes,
     });
 }
