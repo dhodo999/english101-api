@@ -1,7 +1,7 @@
-const jobsheetController = require('../controllers/jobsheet');
+const jobsheetController = require('../controllers/jobsheet'); 
 const router = require('express').Router();
 
-// Route untuk post jawaban
 router.post('/one', jobsheetController.submitOne);
+router.post('/many', jobsheetController.submitMany);
 
 module.exports = router;

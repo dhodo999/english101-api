@@ -18,6 +18,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-// mendefinisikan semua models yang ada pada aplikasi
+// define semua models yang ada pada aplikasi
 db.quizzes = require('./quiz')(sequelize, Sequelize);
+db.material = require('./material')(sequelize, Sequelize);
 module.exports = db;
