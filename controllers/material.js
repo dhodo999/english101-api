@@ -1,10 +1,10 @@
 const db = require('../models');
-const material = db.material;
+const Mats = db.material;
 
 module.exports = {
     create: async(req, res) => {
         try {
-            const data = await material.create(req.body)
+            const data = await Mats.create(req.body)
             res.json({
                 message: "Material created successfully!!",
                 data: data,
@@ -18,7 +18,7 @@ module.exports = {
     },
     getAll: async(req, res) => {
         try {
-            const material = await material.findAll()
+            const material = await Mats.findAll()
             res.json({
                 message: "Materials Retrived Successfully!!!",
                 data: material,
@@ -33,14 +33,14 @@ module.exports = {
     update: async(req, res) => {
         const id = req.params.id
         try {
-            const material = await material.findByPk(id, { rejectOnEmpty: true })
-            material.update(req.body, {
+            const materials = await Mats.findByPk(id, { rejectOnEmpty: true })
+            materials.update(req.body, {
 
                 where: { id }
             });
             res.json({
                 message: "Material Updated Successfully!!!",
-                data: material,
+                data: materials,
             });
         } catch (err) {
             res.status(500).json({
@@ -52,8 +52,8 @@ module.exports = {
     delete: async(req, res) => {
         const id = req.params.id
         try {
-            const material = await material.findByPk(id, { rejectOnEmpty: true })
-            material.destroy()
+            const materials = await Mats.findByPk(id, { rejectOnEmpty: true })
+            materials.destroy()
             res.json({
                 message: "Material Deleted Successfully!!!",
             });
@@ -67,11 +67,11 @@ module.exports = {
     findOne: async(req, res) => {
         const id = req.params.id
         try {
-            const material = await material.findByPk(id, { rejectOnEmpty: true })
-            material.destroy()
+            const materials = await Mats.findByPk(id, { rejectOnEmpty: true })
+            materials.destroy()
             res.json({
                 message: `Material Retrieved Successfully!!! with id: ${id}`,
-                data: material,
+                data: materials,
             });
         } catch (err) {
             res.status(500).json({
@@ -83,7 +83,7 @@ module.exports = {
     getByCategoryId: async(req, res) => {
         const id = req.params.id
         try {
-            const material = await material.findAll({
+            const materials = await Mats.findAll({
                 where: {
                     categoryId: id
                 }
@@ -91,7 +91,7 @@ module.exports = {
 
             res.json({
                 message: "Material Deleted Successfully!!!",
-                data: material,
+                data: materials,
             })
         } catch (err) {
             res.status(500).json({
@@ -103,7 +103,7 @@ module.exports = {
     getByLevelId: async(req, res) => {
         const id = req.params.id
         try {
-            const material = await material.findAll({
+            const materials = await Mats.findAll({
                 where: {
                     LevelId: id
                 }
@@ -111,7 +111,7 @@ module.exports = {
 
             res.json({
                 message: "Material Deleted Successfully!!!",
-                data: material,
+                data: materials,
             })
         } catch (err) {
             res.status(500).json({

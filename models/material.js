@@ -1,8 +1,10 @@
+const { Sequelize } = require("sequelize");
+
 module.exports = (sequelize, Sequelize) => {
-    const material = sequelize.define('material', {
+    const Mats = sequelize.define('material', {
         materi: {
             type: Sequelize.STRING,
         }
     });
-    return material;
+    return Mats;
 }
