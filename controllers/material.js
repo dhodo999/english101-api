@@ -90,7 +90,7 @@ module.exports = {
             })
 
             res.json({
-                message: "Material Deleted Successfully!!!",
+                message: "Material Retrieved Successfully!!!",
                 data: materials,
             })
         } catch (err) {
@@ -110,7 +110,7 @@ module.exports = {
             })
 
             res.json({
-                message: "Material Deleted Successfully!!!",
+                message: "Material Retrieved Successfully!!!",
                 data: materials,
             })
         } catch (err) {
