@@ -3,7 +3,7 @@ const { Sequelize } = require("sequelize");
 module.exports = (sequelize, Sequelize) => {
     const Mats = sequelize.define('material', {
         materi: {
-            type: Sequelize.STRING,
+            type: Sequelize.TEXT,
         },
         categoryId: {
             type: Sequelize.INTEGER,
